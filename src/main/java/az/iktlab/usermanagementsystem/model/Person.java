@@ -8,7 +8,7 @@ public class Person {
     private long id;
     private String name;
     private String surname;
-    private String patronomicName;
+    private String patronymicName;
     private String fin;
     private Gender gender;
     private LocalDate birthDay;
@@ -16,4 +16,5 @@ public class Person {
     private Nationality nationality;
     private Adress adress;
     private Education education;
+
 }
