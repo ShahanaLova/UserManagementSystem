@@ -1,10 +1,14 @@
 package az.iktlab.usermanagementsystem.repository;
 
 import az.iktlab.usermanagementsystem.model.User;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+@Repository
 
 public class userManagementSystemRepository {
     private static final List<User> users = new ArrayList<>();
