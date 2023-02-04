@@ -1,9 +1,13 @@
 package az.iktlab.usermanagementsystem.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Person {
     private long id;
     private String name;
@@ -14,7 +18,8 @@ public class Person {
     private LocalDate birthDay;
     private MaritalStatus maritalStatus;
     private Nationality nationality;
-    private Adress adress;
+    private Long adressId;
     private Education education;
+     private Long workDetailsId;
 
 }

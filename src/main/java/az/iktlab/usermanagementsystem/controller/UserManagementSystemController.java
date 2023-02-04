@@ -27,10 +27,10 @@ public class UserManagementSystemController {
     public User getUserById(@PathVariable("id") Long id){
         return userService.getUserById(id);
     }
-    @GetMapping("/fin")
-    public User getUserByFin(@RequestParam("fin") String fin){
-        return userService.getUserByFin( fin);
-    }
+//    @GetMapping("/fin")
+//    public User getUserByFin(@RequestParam("fin") String fin){
+//        return userService.getUserByFin( fin);
+//    }
     @DeleteMapping("/id")
     public void deleteUserById(@RequestParam("id") Long id){
         userService.deleteById(id);

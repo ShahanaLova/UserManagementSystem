@@ -26,14 +26,14 @@ public class userManagementSystemRepository {
                 });
     }
 
-    public User getUserByFin(String fin) {
-        return users.stream()
-                .filter(u -> Objects.equals(u.getPerson().getFin(), fin))
-                .findAny()
-                .orElseThrow(() -> {
-                    throw new RuntimeException("User not found");
-                });
-    }
+//    public User getUserByFin(String fin) {
+//        return users.stream()
+//                .filter(u -> Objects.equals(u.getPerson().getFin(), fin))
+//                .findAny()
+//                .orElseThrow(() -> {
+//                    throw new RuntimeException("User not found");
+//                });
+//    }
     public void deleteById(Long id) {
         users.removeIf(u -> Objects.equals(u.getId(), id));
     }

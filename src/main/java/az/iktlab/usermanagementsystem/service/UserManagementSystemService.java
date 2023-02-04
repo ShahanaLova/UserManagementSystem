@@ -24,9 +24,9 @@ public class UserManagementSystemService {
     }
 
 
-    public User getUserByFin(String fin) {
-        return userRepo.getUserByFin(fin);
-    }
+//    public User getUserByFin(String fin) {
+//        return userRepo.getUserByFin(fin);
+//    }
 
 
     public void saveUser(User us) {
