@@ -33,7 +33,7 @@ public class UserService {
      return UserDto.builder()
              .id(entity.getId())
              .username(entity.getUsername())
-             .personId(entity.getPersonId())
+             .personId(entity.getPerson().getId())
              .gender(entity.getGender())
              .build();
 

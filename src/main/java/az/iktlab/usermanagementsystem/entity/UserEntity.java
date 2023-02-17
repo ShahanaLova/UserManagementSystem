@@ -5,30 +5,48 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name ="users")
+@Table(name = "users")
 
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private Long id;
-    @Column(name="username")
+    @Column(name = "username")
     private String username;
-    @Column(name= "password")
+    @Column(name = "password")
     private String password;
-    @Column(name="personid")
-    private Long personId;
+    @OneToOne(targetEntity = PersonEntity.class,
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    @JoinTable(name = "user_person",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "person_id"))
+    private PersonEntity person;
 
-    @Column(name="gender")
+    @Column(name = "gender")
     private Gender gender;
+
+    @CreationTimestamp
+    @Column(name="created_at")
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name="updated_at")
+    private LocalDateTime updatedAt;
+
 
 
 }

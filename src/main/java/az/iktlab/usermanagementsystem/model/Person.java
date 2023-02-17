@@ -1,5 +1,6 @@
 package az.iktlab.usermanagementsystem.model;
 
+import az.iktlab.usermanagementsystem.entity.Education;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,8 +19,8 @@ public class Person {
     private LocalDate birthDay;
     private MaritalStatus maritalStatus;
     private Nationality nationality;
-    private Long adressId;
+    private Adress adress;
     private Education education;
-     private Long workDetailsId;
+     private WorkDetails workDetails;
 
 }

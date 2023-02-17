@@ -1,4 +1,4 @@
-package az.iktlab.usermanagementsystem.model;
+package az.iktlab.usermanagementsystem.entity;
 
 public enum Education {
     PRİMARY_SCHOOL,

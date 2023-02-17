@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Adress {
-    private Long adress_id;
+    private Long adressIid;
     private String city;
     private String region;
     private String zipCode;
