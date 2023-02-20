@@ -2,6 +2,7 @@ package az.iktlab.usermanagementsystem.model;
 
 import az.iktlab.usermanagementsystem.entity.Education;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Person {
     private long id;
     private String name;

@@ -1,6 +1,5 @@
 package az.iktlab.usermanagementsystem.controller;
 
-import az.iktlab.usermanagementsystem.entity.UserEntity;
 import az.iktlab.usermanagementsystem.model.UserDto;
 import az.iktlab.usermanagementsystem.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +16,21 @@ public class UserController {
     }
 
     @PostMapping
-    public void save(@RequestBody UserEntity entity){
-      userService.save(entity);
+    public void save(@RequestBody UserDto userDto){
+      userService.save(userDto);
     }
     @GetMapping
     public List<UserDto> getAll(){return userService.getAll();}
+
+    @DeleteMapping({"/id/{id}"})
+    public void deleteById(@PathVariable Long id){
+
+        userService.deleteById(id);
+    }
+
+    @DeleteMapping
+    public void deleteALlUsers(){
+        userService.deleteAllUsers();
+    }
+
 }

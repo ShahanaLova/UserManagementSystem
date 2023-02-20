@@ -1,5 +1,6 @@
 package az.iktlab.usermanagementsystem.repository;
 
+import az.iktlab.usermanagementsystem.entity.UserEntity;
 import az.iktlab.usermanagementsystem.model.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;

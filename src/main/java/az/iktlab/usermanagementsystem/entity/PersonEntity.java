@@ -42,6 +42,8 @@ public class PersonEntity {
     @JoinTable(name = "person_address")
     @JoinColumn(name = "adress_id")
     private AdressEntity adress;
+
+    @Column(name = "education")
     private Education education;
 
     @OneToMany(targetEntity = WorkEntity.class,

@@ -1,10 +1,8 @@
 package az.iktlab.usermanagementsystem.entity;
 
 import az.iktlab.usermanagementsystem.model.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
+import az.iktlab.usermanagementsystem.model.Person;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -16,6 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
+@Builder
 
 public class UserEntity {
 
@@ -29,7 +28,7 @@ public class UserEntity {
     private String password;
     @OneToOne(targetEntity = PersonEntity.class,
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+            fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id")
     @JoinTable(name = "user_person",
             joinColumns = @JoinColumn(name = "user_id"),
