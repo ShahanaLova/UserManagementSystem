@@ -20,16 +20,9 @@ public class UserService {
     }
 
     public void save(UserDto user) {
-        //  UserEntity userEntity = new UserEntity();
 
         UserEntity userEntity = UserMapper.Instance.mapToEntity(user);
-//                UserEntity.builder()
-//                .id(user.getId())
-//                .username(user.getUsername())
-//                .password(user.getPassword())
-//                .person(user.getPerson())
-//                .gender(user.getGender())
-//                .build();
+
 
         userRepository.save(userEntity);
     }
